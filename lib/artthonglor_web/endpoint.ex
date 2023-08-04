@@ -1,12 +1,12 @@
-defmodule ArtthonlgorWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :artthonlgor
+defmodule ArtthonglorWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :artthonglor
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_artthonlgor_key",
+    key: "_artthonglor_key",
     signing_salt: "dV9Snwq8",
     same_site: "Lax"
   ]
@@ -19,9 +19,9 @@ defmodule ArtthonlgorWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :artthonlgor,
+    from: :artthonglor,
     gzip: false,
-    only: ArtthonlgorWeb.static_paths()
+    only: ArtthonglorWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -29,7 +29,7 @@ defmodule ArtthonlgorWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :artthonlgor
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :artthonglor
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -47,5 +47,5 @@ defmodule ArtthonlgorWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ArtthonlgorWeb.Router
+  plug ArtthonglorWeb.Router
 end

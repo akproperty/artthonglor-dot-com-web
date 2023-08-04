@@ -1,9 +1,9 @@
-defmodule Artthonlgor.Release do
+defmodule Artthonglor.Release do
   @moduledoc """
   Used for executing DB release tasks when run in production without Mix
   installed.
   """
-  @app :artthonlgor
+  @app :artthonglor
 
   def migrate do
     load_app()

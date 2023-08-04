@@ -1,4 +1,4 @@
-defmodule ArtthonlgorWeb.CoreComponents do
+defmodule ArtthonglorWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule ArtthonlgorWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ArtthonlgorWeb.Gettext
+  import ArtthonglorWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -650,9 +650,9 @@ defmodule ArtthonlgorWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(ArtthonlgorWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ArtthonglorWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ArtthonlgorWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ArtthonglorWeb.Gettext, "errors", msg, opts)
     end
   end
 

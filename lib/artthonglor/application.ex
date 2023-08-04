@@ -1,4 +1,4 @@
-defmodule Artthonlgor.Application do
+defmodule Artthonglor.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,22 +9,22 @@ defmodule Artthonlgor.Application do
   def start(_type, _args) do
     children = [
       # Start the Telemetry supervisor
-      ArtthonlgorWeb.Telemetry,
+      ArtthonglorWeb.Telemetry,
       # Start the Ecto repository
-      Artthonlgor.Repo,
+      Artthonglor.Repo,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Artthonlgor.PubSub},
+      {Phoenix.PubSub, name: Artthonglor.PubSub},
       # Start Finch
-      {Finch, name: Artthonlgor.Finch},
+      {Finch, name: Artthonglor.Finch},
       # Start the Endpoint (http/https)
-      ArtthonlgorWeb.Endpoint
-      # Start a worker by calling: Artthonlgor.Worker.start_link(arg)
-      # {Artthonlgor.Worker, arg}
+      ArtthonglorWeb.Endpoint
+      # Start a worker by calling: Artthonglor.Worker.start_link(arg)
+      # {Artthonglor.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Artthonlgor.Supervisor]
+    opts = [strategy: :one_for_one, name: Artthonglor.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -32,7 +32,7 @@ defmodule Artthonlgor.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    ArtthonlgorWeb.Endpoint.config_change(changed, removed)
+    ArtthonglorWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

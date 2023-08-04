@@ -1,5 +1,5 @@
-defmodule ArtthonlgorWeb.PageController do
-  use ArtthonlgorWeb, :controller
+defmodule ArtthonglorWeb.PageController do
+  use ArtthonglorWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

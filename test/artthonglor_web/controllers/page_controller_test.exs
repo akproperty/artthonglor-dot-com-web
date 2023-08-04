@@ -1,5 +1,5 @@
-defmodule ArtthonlgorWeb.PageControllerTest do
-  use ArtthonlgorWeb.ConnCase, async: true
+defmodule ArtthonglorWeb.PageControllerTest do
+  use ArtthonglorWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

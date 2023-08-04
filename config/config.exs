@@ -7,17 +7,17 @@
 # General application configuration
 import Config
 
-config :artthonlgor,
-  ecto_repos: [Artthonlgor.Repo]
+config :artthonglor,
+  ecto_repos: [Artthonglor.Repo]
 
 # Configures the endpoint
-config :artthonlgor, ArtthonlgorWeb.Endpoint,
+config :artthonglor, ArtthonglorWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    formats: [html: ArtthonlgorWeb.ErrorHTML, json: ArtthonlgorWeb.ErrorJSON],
+    formats: [html: ArtthonglorWeb.ErrorHTML, json: ArtthonglorWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Artthonlgor.PubSub,
+  pubsub_server: Artthonglor.PubSub,
   live_view: [signing_salt: "qKhhValF"]
 
 # Configures the mailer
@@ -27,7 +27,7 @@ config :artthonlgor, ArtthonlgorWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :artthonlgor, Artthonlgor.Mailer, adapter: Swoosh.Adapters.Local
+config :artthonglor, Artthonglor.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configures Elixir's Logger
 config :logger, :console,

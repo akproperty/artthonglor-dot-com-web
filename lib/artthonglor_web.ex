@@ -1,12 +1,12 @@
-defmodule ArtthonlgorWeb do
+defmodule ArtthonglorWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use ArtthonlgorWeb, :controller
-      use ArtthonlgorWeb, :html
+      use ArtthonglorWeb, :controller
+      use ArtthonglorWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule ArtthonlgorWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: ArtthonlgorWeb.Layouts]
+        layouts: [html: ArtthonglorWeb.Layouts]
 
       import Plug.Conn
-      import ArtthonlgorWeb.Gettext
+      import ArtthonglorWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule ArtthonlgorWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {ArtthonlgorWeb.Layouts, :app}
+        layout: {ArtthonglorWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule ArtthonlgorWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import ArtthonlgorWeb.CoreComponents
-      import ArtthonlgorWeb.Gettext
+      import ArtthonglorWeb.CoreComponents
+      import ArtthonglorWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule ArtthonlgorWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: ArtthonlgorWeb.Endpoint,
-        router: ArtthonlgorWeb.Router,
-        statics: ArtthonlgorWeb.static_paths()
+        endpoint: ArtthonglorWeb.Endpoint,
+        router: ArtthonglorWeb.Router,
+        statics: ArtthonglorWeb.static_paths()
     end
   end
 

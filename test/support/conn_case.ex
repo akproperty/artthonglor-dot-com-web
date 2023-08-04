@@ -1,4 +1,4 @@
-defmodule ArtthonlgorWeb.ConnCase do
+defmodule ArtthonglorWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule ArtthonlgorWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ArtthonlgorWeb.ConnCase, async: true`, although
+  by setting `use ArtthonglorWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -20,19 +20,19 @@ defmodule ArtthonlgorWeb.ConnCase do
   using do
     quote do
       # The default endpoint for testing
-      @endpoint ArtthonlgorWeb.Endpoint
+      @endpoint ArtthonglorWeb.Endpoint
 
-      use ArtthonlgorWeb, :verified_routes
+      use ArtthonglorWeb, :verified_routes
 
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import ArtthonlgorWeb.ConnCase
+      import ArtthonglorWeb.ConnCase
     end
   end
 
   setup tags do
-    Artthonlgor.DataCase.setup_sandbox(tags)
+    Artthonglor.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

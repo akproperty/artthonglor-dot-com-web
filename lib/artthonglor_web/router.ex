@@ -1,11 +1,11 @@
-defmodule ArtthonlgorWeb.Router do
-  use ArtthonlgorWeb, :router
+defmodule ArtthonglorWeb.Router do
+  use ArtthonglorWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {ArtthonlgorWeb.Layouts, :root}
+    plug :put_root_layout, html: {ArtthonglorWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,19 +14,19 @@ defmodule ArtthonlgorWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ArtthonlgorWeb do
+  scope "/", ArtthonglorWeb do
     pipe_through :browser
 
     get "/", PageController, :home
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ArtthonlgorWeb do
+  # scope "/api", ArtthonglorWeb do
   #   pipe_through :api
   # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
-  if Application.compile_env(:artthonlgor, :dev_routes) do
+  if Application.compile_env(:artthonglor, :dev_routes) do
     # If you want to use the LiveDashboard in production, you should put
     # it behind authentication and allow only admins to access it.
     # If your application does not have an admins-only section yet,
@@ -37,7 +37,7 @@ defmodule ArtthonlgorWeb.Router do
     scope "/dev" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: ArtthonlgorWeb.Telemetry
+      live_dashboard "/dashboard", metrics: Artthonglor.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end

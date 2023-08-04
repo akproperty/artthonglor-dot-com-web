@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :artthonlgor, Artthonlgor.Repo,
+config :artthonglor, Artthonglor.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "artthonlgor_dev",
+  database: "artthonglor_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :artthonlgor, Artthonlgor.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :artthonlgor, ArtthonlgorWeb.Endpoint,
+config :artthonglor, ArtthonglorWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -52,17 +52,17 @@ config :artthonlgor, ArtthonlgorWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :artthonlgor, ArtthonlgorWeb.Endpoint,
+config :artthonglor, ArtthonglorWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/artthonlgor_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/artthonglor_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :artthonlgor, dev_routes: true
+config :artthonglor, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

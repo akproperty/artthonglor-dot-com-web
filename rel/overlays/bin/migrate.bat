@@ -1,1 +1,1 @@
-call "%~dp0\artthonlgor" eval Artthonlgor.Release.migrate
+call "%~dp0\artthonglor" eval Artthonglor.Release.migrate
