@@ -112,4 +112,18 @@ if config_env() == :prod do
   #     config :swoosh, :api_client, Swoosh.ApiClient.Hackney
   #
   # See https://hexdocs.pm/swoosh/Swoosh.html#module-installation for details.
+  config :appsignal, :config, active: true
+
+  appsignal_push_key =
+    System.get_env("APPSIGNAL_PUSH_KEY") || raise """
+    environment variable APPSIGNAL_PUSH_KEY is missing
+    """
+
+  config :appsignal, :config,
+    otp_app: :artthonlgor,
+    name: "artthonglor",
+    push_api_key: appsignal_push_key,
+    env: :prod
+
+  config :logger, :backends, [:console, {Appsignal.Logger.Backend, [group: "phoenix"]}]
 end
