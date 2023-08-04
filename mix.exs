@@ -65,7 +65,7 @@ defmodule Artthonlgor.MixProject do
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
       "assets.build": ["tailwind default", "esbuild default"],
-      "assets.deploy": ["cmd --cd assets node build.js --deploy", "phx.digest"]
+      "assets.deploy": ["phx.digest"]
     ]
   end
 end
