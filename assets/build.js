@@ -1,5 +1,5 @@
 const esbuild = require("esbuild");
-
+const sassPlugin = require("esbuild-plugin-sass");
 const args = process.argv.slice(2);
 const watch = args.includes('--watch');
 const deploy = args.includes('--deploy');
@@ -9,12 +9,12 @@ const loader = {
 };
 
 const plugins = [
-  // Add and configure plugins here
+  sassPlugin()
 ];
 
 // Define esbuild options
 let opts = {
-  entryPoints: ["js/app.js"],
+  entryPoints: ["js/app.js", "css/app.scss"],
   bundle: true,
   logLevel: "info",
   target: "es2017",
