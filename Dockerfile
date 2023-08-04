@@ -88,6 +88,7 @@ RUN mix compile
 
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
+RUN mix assets.deploy
 
 COPY rel rel
 RUN mix release
