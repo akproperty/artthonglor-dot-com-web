@@ -25,8 +25,7 @@ config :artthonlgor, ArtthonlgorWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "QsyZu+Fn2+25PC0MSnss2gwB1WddR3UznkPLGJJbSkHnxK/vORir19b8NJRYI5Dk",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support
