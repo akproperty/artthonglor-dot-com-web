@@ -38,7 +38,7 @@ jobs:
     - name: Run dialyzer
       run: mix dialyzer --format github
 
-  formatter:
+  linter:
     name: check formatted
     runs-on: ubuntu-latest
     steps:
@@ -60,6 +60,9 @@ jobs:
       run: mix deps.get
     - name: Check Formatted
       run: mix format --check-formatted
+    - name: Check Static Analyzed
+      run: mix credo
+
   test:
     name: test ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
