@@ -39,7 +39,7 @@ jobs:
       run: mix dialyzer --format github
 
   linter:
-    name: check formatted
+    name: check Linted
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
