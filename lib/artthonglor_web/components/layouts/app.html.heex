@@ -1,12 +1,15 @@
 <header class="container is-fluid">
-  <h1 class="title is-3">Art Thonglor</h1>
-  <p class="subtitle is-6">
-    By K.P. Group
-    <br />
-    Condominium Registered & Ready To Move in. Sale/Rent Contact:
-    <a href="tel:+66822189292">082-218-9292</a>
+  <h1 class="title is-2">Art Thonglor</h1>
+  <p class="subtitle is-5">
+    By K.P. Group <br /> Condominium Registered & Ready To Move in. Sale/Rent Contact:
+    <.link href="tel:+66822189292">082-218-9292</.link>
   </p>
 </header>
+<nav class="navbar container is-fluid" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <.link href={~p"/"} class="navbar-item">Art@Thonglor</.link>
+  </div>
+</nav>
 <main class="main">
   <.flash_group flash={@flash} />
   <%= @inner_content %>
