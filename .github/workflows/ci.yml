@@ -6,6 +6,36 @@ permissions:
   contents: read
 
 jobs:
+  typespec:
+    name: check typespec
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir 
+      uses: erlef/setup-beam@v1
+      with:
+        elixir-version: 1.15.4
+        otp-version: 26.0.2
+    - name: Restore PLT cache
+      uses: actions/cache/restore@v3
+      id: plt_cache
+      with:
+        path: priv/plts
+        key: ${{ runner.os }}-plt
+        restore-keys: ${{ runner.os }}-plt
+    - name: Create PLTs
+        if: steps.plt_cache.outputs.cache-hit != 'true'
+        run: mix dialyzer --plt
+    - name: Save PLT cache
+        uses: actions/cache/save@v3
+        if: steps.plt_cache.outputs.cache-hit != 'true'
+        id: plt_cache_save
+        with:
+          key: ${{ runner.os }}-plt
+          path: priv/plts
+      - name: Run dialyzer
+        run: mix dialyzer --format github
+
   formatter:
     name: check formatted
     runs-on: ubuntu-latest
