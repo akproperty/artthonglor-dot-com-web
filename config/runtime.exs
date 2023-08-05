@@ -115,9 +115,10 @@ if config_env() == :prod do
   config :appsignal, :config, active: true
 
   appsignal_push_key =
-    System.get_env("APPSIGNAL_PUSH_KEY") || raise """
-    environment variable APPSIGNAL_PUSH_KEY is missing
-    """
+    System.get_env("APPSIGNAL_PUSH_KEY") ||
+      raise """
+      environment variable APPSIGNAL_PUSH_KEY is missing
+      """
 
   config :appsignal, :config,
     otp_app: :artthonglor,
