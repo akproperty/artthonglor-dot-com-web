@@ -20,10 +20,11 @@ defmodule ArtthonglorWeb.Router do
     get "/", PageController, :home
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ArtthonglorWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ArtthonglorWeb.Api do
+    pipe_through :api
+
+    get "/health", HealthController, :check
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:artthonglor, :dev_routes) do
