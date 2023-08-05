@@ -6,6 +6,26 @@ permissions:
   contents: read
 
 jobs:
+  formatter:
+    name: check formatted
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir 
+      uses: erlef/setup-beam@v1
+      with:
+        elixir-version: 26.0.2
+        otp-version: 1.15.4
+    - name: Restore dependencies cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          deps
+          _build
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-v2
+    - name: Checck Formatted
+      run: mix format --check-formatted
   test:
     name: test ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
@@ -40,7 +60,7 @@ jobs:
           deps
           _build
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-        restore-keys: ${{ runner.os }}-mix-v1
+        restore-keys: ${{ runner.os }}-mix-v2
     - name: Install dependencies
       run: mix deps.get
     - name: Run tests

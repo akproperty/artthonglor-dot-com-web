@@ -1,5 +1,5 @@
 defmodule ArtthonglorWeb.Api.HealthControllerTest do
-  use ArtthonglorWeb.ConnCase, asnyc: true 
+  use ArtthonglorWeb.ConnCase, asnyc: true
 
   test "GET /heath returns 200 response", %{conn: conn} do
     conn = get(conn, ~p"/api/health")
