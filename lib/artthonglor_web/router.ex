@@ -18,6 +18,7 @@ defmodule ArtthonglorWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/room-plan", PageController, :room_plan
   end
 
   scope "/api", ArtthonglorWeb.Api do
