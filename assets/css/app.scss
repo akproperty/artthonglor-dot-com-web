@@ -9,9 +9,6 @@ $navbar-background-color: #df6d27;
 $navbar-item-color: #fff;
 $navbar-item-hover-color: #fff;
 @import "../node_modules/bulma/bulma.sass";
-.main {
-  min-height: calc(100vh - 10rem);
-}
 #banner {
   background-color: $link;
 }
