@@ -7,7 +7,8 @@ $link: #df6d27;
 $link-hover: #df6d27;
 $navbar-background-color: #df6d27;
 $navbar-item-color: #fff;
-$navbar-item-hover-color: #fff;
+$navbar-item-hover-color: #344f5a;
+$navbar-item-hover-background-color: #df6d27;
 @import "../node_modules/bulma/bulma.sass";
 #banner {
   background-color: $link;
