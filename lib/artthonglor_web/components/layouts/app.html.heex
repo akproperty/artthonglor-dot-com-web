@@ -5,17 +5,19 @@
     <.link href="tel:+66822189292">082-218-9292</.link>
   </p>
 </header>
-<nav class="navbar container" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <.link href={~p"/"} class="navbar-item">Art@Thonglor</.link>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start">
-      <.link class="navbar-item" href={~p"/room-plan"}>Room Plan</.link>
+<div id="navbar-container">
+  <nav class="navbar container" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <.link href={~p"/"} class="navbar-item">Art@Thonglor</.link>
     </div>
-  </div>
-</nav>
-<main class="main container">
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <.link class="navbar-item" href={~p"/room-plan"}>Room Plan</.link>
+      </div>
+    </div>
+  </nav>
+</div>
+<main class="main">
   <%= @inner_content %>
 </main>
 <footer class="container has-text-right">
