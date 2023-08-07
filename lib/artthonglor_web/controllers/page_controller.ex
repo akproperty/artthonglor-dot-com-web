@@ -16,4 +16,8 @@ defmodule ArtthonglorWeb.PageController do
   def contact(conn, _params) do
     render(conn, :contact, page_title: "Contact")
   end
+
+  def gallery(conn, _params) do
+    render(conn, :gallery, page_title: "Gallery")
+  end
 end
