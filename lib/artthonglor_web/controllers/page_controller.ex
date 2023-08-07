@@ -12,4 +12,8 @@ defmodule ArtthonglorWeb.PageController do
   def floor_plan(conn, _params) do
     render(conn, :floor_plan, page_title: "Floor Plan")
   end
+
+  def contact(conn, _params) do
+    render(conn, :contact, page_title: "Contact")
+  end
 end
