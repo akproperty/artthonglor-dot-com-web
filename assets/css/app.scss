@@ -10,6 +10,12 @@ $navbar-item-color: #fff;
 $navbar-item-hover-color: #344f5a;
 $navbar-item-hover-background-color: #df6d27;
 @import "../node_modules/bulma/bulma.sass";
+.navbar-burger {
+  span{color: #fff;}
+}
+.navbar-brand {
+  background-color: #d43;
+}
 #banner {
   background-color: $link;
 }
