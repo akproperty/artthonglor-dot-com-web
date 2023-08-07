@@ -21,6 +21,7 @@ defmodule ArtthonglorWeb.Router do
     get "/room-plan", PageController, :room_plan
     get "/floor-plan", PageController, :floor_plan
     get "/contact", PageController, :contact
+    get "/gallery", PageController, :gallery
   end
 
   scope "/api", ArtthonglorWeb.Api do
