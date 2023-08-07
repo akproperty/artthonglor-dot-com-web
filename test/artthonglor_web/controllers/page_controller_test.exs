@@ -12,4 +12,10 @@ defmodule ArtthonglorWeb.PageControllerTest do
 
     assert html_response(conn, 200) =~ "Room Plan"
   end
+
+  test "GET /floor-plan", %{conn: conn} do
+    conn = get(conn, ~p"/floor-plan")
+
+    assert html_response(conn, 200) =~ "Floor Plan"
+  end
 end
