@@ -112,7 +112,6 @@ RUN chown nobody /app
 
 # set runner ENV
 ENV MIX_ENV="prod"
-RUN export APP_REVISION=$RANDOM
 
 # Only copy the final release from the build stage
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/artthonglor ./
