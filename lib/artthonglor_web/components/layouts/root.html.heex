@@ -6,9 +6,11 @@
     <meta name="csrf-token" content={get_csrf_token()} />
     <.live_title suffix=" · Art@thonglor"><%= assigns[:page_title] %></.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
-    <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}></script>
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
+    </script>
     <%= if @env == :prod do %>
-      <script defer data-domain="artthonglor.com" src="https://plausible.io/js/script.js"></script>
+      <script defer data-domain="artthonglor.com" src="https://plausible.io/js/script.js">
+      </script>
     <% end %>
   </head>
   <body>
