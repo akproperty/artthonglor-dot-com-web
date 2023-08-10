@@ -4,7 +4,6 @@
 #
 
 app = "artthonglor-web"
-primary_region = "sin"
 kill_signal = "SIGTERM"
 swap_size_mb = 512
 
@@ -14,8 +13,6 @@ swap_size_mb = 512
   release_command = "/app/bin/migrate"
 
 [env]
-  PHX_HOST = "artthonglor-web.fly.dev"
-  PORT = "8080"
 
 [http_service]
   internal_port = 8080
