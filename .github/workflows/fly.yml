@@ -9,6 +9,9 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    environment: 
+      name: prod
+      url: https://artthonglor.com?utm_source=Github&utm_medium=Display&utm_campign=Prod+Deployment
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
