@@ -9,9 +9,16 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    environment: 
+      name: prod
+      url: https://artthonglor.com?utm_source=Github&utm_medium=Display&utm_campign=Prod+Deployment
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - run: |
+          flyctl deploy --remote-only \
+          --env PORT=${{ secrets.FLY_APP_PORT }} \
+          --env PRIMARY_REGION=${{ secrets.FLY_APP_REGION }} \
+          --env PHX_HOST=${{ secrets.FLY_PHX_HOST }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
