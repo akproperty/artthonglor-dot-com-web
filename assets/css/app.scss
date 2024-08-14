@@ -22,3 +22,8 @@ $navbar-item-hover-background-color: #df6d27;
 #navbar-container, #home-container{
   background-color: $link;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
